@@ -1,0 +1,509 @@
+:root {
+  --ems-primary: #a70a94;
+  --ems-secondary: #6f42c1;
+  --ems-success: #27081f;
+  --ems-danger: #35b5dc;
+  --ems-warning: #a34d4d;
+  --ems-soft: #eef5ff;
+  --ems-surface: #ffffff;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.08), transparent 28%),
+    linear-gradient(180deg, #f7f9fc 0%, #eef3fb 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+.app-shell {
+  padding: 0.5rem;
+}
+
+#mainNavbar + .app-shell,
+.content-view {
+  padding-top: 3rem;
+}
+
+#mainNavbar {
+  background: rgba(218, 115, 172, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.auth-bg {
+  background: linear-gradient(135deg, #eef5ff, #f8fbff 50%, #e7f0ff);
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.78);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card,
+.modal-content,
+.table,
+.toast {
+  border-radius: 1rem;
+}
+
+.kpi-card {
+  border: 0;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.kpi-card.tone-primary {
+  border-top: 4px solid var(--ems-primary);
+}
+
+.kpi-card.tone-success {
+  border-top: 4px solid var(--ems-success);
+}
+
+.kpi-card.tone-danger {
+  border-top: 4px solid var(--ems-danger);
+}
+
+.kpi-card.tone-warning {
+  border-top: 4px solid var(--ems-warning);
+}
+
+.kpi-icon {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--ems-soft);
+  color: var(--ems-primary);
+  font-size: 1.4rem;
+  box-shadow: inset 0 0 0 1px rgba(13, 110, 253, 0.08);
+}
+
+.error-text {
+  min-height: 1.1rem;
+  font-size: 0.88rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.12);
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.status-badge.active {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-badge.inactive {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.department-badge {
+  background: #e9ecef;
+  color: #334155;
+}
+
+#employeeTable thead th {
+  white-space: nowrap;
+}
+
+#employeeTable tbody tr:nth-child(even) {
+  background: #fafbfe;
+}
+
+#employeeTable tbody tr:hover {
+  background: #eef5ff;
+}
+
+.department-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 48px;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.department-bar-wrap {
+  background: #e9ecef;
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.department-bar {
+  background: linear-gradient(90deg, #0d6efd, #6ea8fe);
+  height: 100%;
+  border-radius: 999px;
+}
+
+.recent-item {
+  border-bottom: 1px solid #eef2f7;
+}
+
+.recent-item:last-child {
+  border-bottom: 0;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.btn-group .btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .d-flex.gap-2 {
+    flex-direction: column;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .department-row {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell {
+    padding: 0.75rem;
+  }
+
+  .card-body,
+  .modal-body,
+  .modal-header,
+  .modal-footer {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+.custom-auth-box {
+    background: rgb(138, 190, 218);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.auth-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.custom-auth-box h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.custom-auth-box h2 {
+    font-size: 18px;
+    color: rgb(165, 81, 229);
+    margin-bottom: 5px;
+}
+
+.custom-auth-box h5 {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.custom-auth-box input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.custom-auth-box button {
+    width: 100%;
+    padding: 8px;
+    background: rgb(203, 135, 209);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.custom-auth-box p {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.custom-auth-box a {
+    color: rgb(233, 146, 200);
+}
+
+.error-text {
+    font-size: 12px;
+    color: red;
+    text-align: left;
+}
+/* ================= AUTH CARD COLORFUL ================= */
+
+#authSection .card {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4) !important;
+  color: #2d3436;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Title */
+#authSection h1,
+#authSection h2 {
+  color: #6c5ce7 !important;
+  font-weight: 700;
+}
+
+/* Inputs */
+#authSection .form-control {
+  border-radius: 10px;
+  height: 45px;
+  border: 1px solid #ddd;
+}
+
+#authSection .form-control:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 6px rgba(108, 92, 231, 0.4);
+}
+
+/* Login Button */
+#authSection .btn-primary {
+  background: linear-gradient(90deg, #0984e3, #6c5ce7);
+  border: none;
+  height: 45px;
+  border-radius: 10px;
+}
+
+/* Signup Button */
+#authSection .btn-success {
+  background: linear-gradient(90deg, #00b894, #55efc4);
+  border: none;
+  height: 45px;
+  border-radius: 10px;
+}
+
+/* Links */
+#authSection a {
+  color: #d63031;
+  font-weight: 600;
+}
+
+/* Background behind card */
+.auth-bg {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5) !important;
+}
+/* ================= FIX FULL SCREEN CENTER ================= */
+
+#authSection {
+  position: fixed;     /* full screen lock */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove extra spacing from bootstrap grid */
+#authSection .row {
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+#authSection .col-12 {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Fix card size */
+#authSection .card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/* ================= REDUCE CARD SIZE ================= */
+
+#authSection .card {
+  max-width: 380px;     /* slightly smaller width */
+  padding: 10px;        /* reduce inside spacing */
+}
+
+/* Reduce internal spacing */
+#authSection .card-body {
+  padding: 20px !important;
+}
+
+/* Reduce heading spacing */
+#authSection h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+#authSection h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Reduce input spacing */
+#authSection .mb-3 {
+  margin-bottom: 10px !important;
+}
+
+/* Reduce button height */
+#authSection .btn {
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Reduce bottom text spacing */
+#authSection p {
+  margin-top: 10px;
+  font-size: 13px;
+}
+#authSection .form-control {
+  height: 38px;
+  font-size: 13px;
+}
+/* ================= LOGO STYLE ================= */
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+#mainNavbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.1rem; /* increase font size */
+}
+
+#mainNavbar .navbar-brand {
+  font-size: 1.3rem; /* increase logo text size */
+}
+
+#mainNavbar .nav-link {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+#mainNavbar {
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+}
+
+#dashboardSection {
+  background: radial-gradient(circle at top left, rgba(44, 62, 80, 0.1), transparent 30%), 
+              linear-gradient(180deg, #f2f6fc 0%, #e6eef6 100%);
+}
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(90deg, #0d6efd, #6f42c1) !important;
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    font-size: 24px !important;
+}
+
+/* ===== DASHBOARD STYLES ===== */
+#dashboardSection h2, #employeesSection h2 {
+    color: #212529;
+    border-left: 6px solid #0d6efd;
+    padding-left: 12px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 6px solid;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.card-number {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.card-employees {
+    border-left-color: #0d6efd;
+}
+.card-employees .card-number {
+    color: #0d6efd;
+}
+
+.card-departments {
+    border-left-color: #fd7e14;
+}
+.card-departments .card-number {
+    color: #fd7e14;
+}
+
+.card-active {
+    border-left-color: #198754;
+}
+.card-active .card-number {
+    color: #198754;
+}
+
+/* Status badges in table */
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+}
